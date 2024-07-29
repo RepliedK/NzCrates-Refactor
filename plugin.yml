@@ -1,0 +1,18 @@
+name: NzCrates
+version: 0.0.1
+author: Nozell
+api: [5.0.0]
+main: Nozell\Main
+permissions:
+  box.give.all:
+   default: op
+  box.give:
+   default: op
+  box.spawn:
+   default: op
+  box.dell:
+   default: op
+  keys.info:
+   default: true
+  crates.menu:
+   default: true
