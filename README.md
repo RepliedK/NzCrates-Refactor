@@ -11,7 +11,7 @@ NzCrates es un plugin de PocketMine-MP que permite crear y gestionar crates (caj
 
 ## Instalación
 
-1. Descarga el archivo `NzCrates.zip` y extráelo en el directorio `plugins` de tu servidor PocketMine-MP.
+1. Descarga el archivo `NzCrates` y extráelo en el directorio `plugins` de tu servidor PocketMine-MP.
 2. Reinicia tu servidor para que el plugin se cargue correctamente.
 
 ## Comandos
