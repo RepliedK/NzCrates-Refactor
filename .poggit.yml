@@ -6,6 +6,6 @@ projects:
   NzCrates:
     path: ""
     libs:
-     - src: "muqsit/InvMenu"
+     - src: "muqsit/invmenu/InvMenu"
      - src: "Vecnavium/FormsUI"
 ...
