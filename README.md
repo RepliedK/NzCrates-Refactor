@@ -20,8 +20,6 @@ NzCrates es un plugin de PocketMine-MP que permite crear y gestionar crates (caj
 
 - Descripción: Abre un menú donde puedes configurar y gestionar todas las crates.
 - Uso: `/crates`
-- Permisos: `nzcrates.use`
-
 ## Permisos
 
 - `nzcrates.use`: Permite usar el comando `/crates`. Este permiso está habilitado por defecto para todos los jugadores.
