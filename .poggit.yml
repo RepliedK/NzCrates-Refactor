@@ -7,5 +7,5 @@ projects:
     path: ""
     libs:
      - src: "muqsit/InvMenu"
-     - src: "Vecnavium\FormsUI"
+     - src: "Vecnavium/FormsUI"
 ...
