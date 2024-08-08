@@ -213,4 +213,3 @@ class CrateManager {
         return $itemsList;
     }
 }
-?>
