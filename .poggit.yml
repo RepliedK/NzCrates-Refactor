@@ -5,4 +5,7 @@ branches:
 projects:
   NzCrates:
     path: ""
+    libs:
+     - src: "muqsit/InvMenu"
+     - src: "Vecnavium\FormsUI"
 ...
