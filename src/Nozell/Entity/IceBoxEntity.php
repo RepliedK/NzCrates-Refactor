@@ -117,7 +117,7 @@ class IceBoxEntity extends Living {
                     }
                     if ($boutique !== 0) {
                         Main::removeKeyBox($player, "ice", 1);
-                        Main::getInstance()->getCrateManager()->getRandomItemFromCrate("ice", $player->getName(), $this, "animation.dark_magma.opened", "controller.animation.dark_magma.opened");
+                        Main::getInstance()->getCrateManager()->getRandomItemFromCrate("ice", $player->getName(), $this);
                         $player->sendMessage("§aHas abierto una crate exitosamente!");
                     } else {
                         $player->sendMessage("§cAl parecer no tienes keys!");
