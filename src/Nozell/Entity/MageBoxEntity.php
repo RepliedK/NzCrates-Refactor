@@ -88,7 +88,7 @@ class MageBoxEntity extends Living {
                 $playerName = $damager->getName();
 
                 // Comprobar cooldown
-                if (isset($this->cooldowns[$playerName]) && $currentTime < $this->cooldowns[$playerName] + 20) {
+                if (isset($this->cooldowns[$playerName]) && $currentTime < $this->cooldowns[$playerName] + 10) {
                     $damager->sendMessage("§cDebes esperar antes de volver a abrir la crate.");
                     return;
                 }
@@ -122,7 +122,7 @@ class MageBoxEntity extends Living {
                     }
                     if ($boost !== 0) {
                         Main::removeKeyBox($player, "mage", 1);
-                        Main::getInstance()->getCrateManager()->getRandomItemFromCrate("mage", $player->getName(), $this, "animation.dark_magma.opened", "controller.animation.dark_magma.opened");
+                        Main::getInstance()->getCrateManager()->getRandomItemFromCrate("mage", $player->getName(), $this);
                         $player->sendMessage("§aHas abierto una crate exitosamente!");
                     } else {
                         $player->sendMessage("§cAl parecer no tienes keys!");
