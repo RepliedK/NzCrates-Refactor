@@ -83,7 +83,7 @@ class IceBoxEntity extends Living {
                 $playerName = $damager->getName();
 
                 // Comprobar cooldown
-                if (isset($this->cooldowns[$playerName]) && $currentTime < $this->cooldowns[$playerName] + 20) {
+                if (isset($this->cooldowns[$playerName]) && $currentTime < $this->cooldowns[$playerName] + 10) {
                     $damager->sendMessage("§cDebes esperar antes de volver a abrir la crate.");
                     return;
                 }
