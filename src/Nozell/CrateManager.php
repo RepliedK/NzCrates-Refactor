@@ -10,7 +10,6 @@ use pocketmine\nbt\TreeRoot;
 use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
-use SaraiCsDev\Animation\AnimationHandler;
 use pocketmine\world\Position;
 use pocketmine\world\particle\LavaParticle;
 
@@ -84,7 +83,7 @@ class CrateManager {
         return $this->crateData->exists($crateLabel);
     }
 
-    public function getRandomItemFromCrate(string $crateLabel, string $playerUsername, object $entityInstance, string $animationFile, string $animationController): void {
+    public function getRandomItemFromCrate(string $crateLabel, string $playerUsername, object $entityInstance): void {
         $targetPlayer = $this->mainPlugin->getServer()->getPlayerExact($playerUsername);
 
         if (!$targetPlayer instanceof Player) {
@@ -138,7 +137,7 @@ class CrateManager {
             ],
             [
                 'actions' => [
-                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance, $animationFile, $animationController) {
+                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance) {
                         $targetPlayer->sendTitle(TextFormat::colorize("&e1"), "", 5, 20, 5);
                         Main::PlaySound($targetPlayer, "note.harp", 100, 500);
                     }
@@ -146,7 +145,7 @@ class CrateManager {
             ],
             [
                 'actions' => [
-                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance, $animationFile, $animationController) {
+                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance) {
                         $targetPlayer->sendTitle(TextFormat::colorize("&g2"), "", 5, 20, 5);
                         Main::PlaySound($targetPlayer, "note.harp", 100, 500);
                     }
@@ -154,9 +153,8 @@ class CrateManager {
             ],
             [
                 'actions' => [
-                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance, $animationFile, $animationController) {
+                    function(Player $targetPlayer) use ($randomItem, $itemLabel, $entityInstance) {
                         $targetPlayer->sendTitle(TextFormat::colorize("&63"), "", 5, 20, 5);
-                        AnimationHandler::playAnimationForAll($entityInstance, $animationFile, $animationController, "play");
                         Main::PlaySound($targetPlayer, "note.harp", 100, 500);
                     }
                 ]
