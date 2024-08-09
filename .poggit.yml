@@ -5,6 +5,7 @@ branches:
 projects:
   NzCrates:
     path: ""
+    icon: "icon.png"
     libs:
      - src: "muqsit/invmenu/InvMenu"
 ...
