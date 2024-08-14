@@ -1,6 +1,3 @@
-<p align="center">
-	<a href="https://discord.gg/NvxR2SCyQY"><img src="https://img.shields.io/discord/1104339932148924436?color=%2392e5fc&label=discord" alt="Discord" /></a>
-</p>
 
 # NzCrates Plugin
 
