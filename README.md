@@ -1,3 +1,7 @@
+<p align="center">
+        <a href="https://discord.com/invite/NvxR2SCyQY"><img src="https://img.shields.io/discord/1104339932148924436?color=%2392e5fc&label=discord" alt="Discord" /></a>
+</p>
+
 # NzCrates Plugin
 
 NzCrates es un plugin de PocketMine-MP que permite crear y gestionar crates (cajas de recompensas) con soporte para entidades, animaciones y partículas. Todo es editable desde el juego utilizando ítems del juego.
