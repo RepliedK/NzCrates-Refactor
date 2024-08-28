@@ -31,16 +31,7 @@ class CrateManager {
         $this->crateData->save();
     }
 
-    public function createCrate(string $crateLabel, array $crateItems): void {
-        $serializedItems = [];
-
-        foreach ($crateItems as $crateItem) {
-            $serializedItems[] = $this->serializeItem($crateItem);
-        }
-
-        $this->crateData->set($crateLabel, serialize($serializedItems));
-        $this->saveCrates();
-    }
+    
 
     public function getCrate(string $crateLabel): array {
         if (!$this->crateData->exists($crateLabel)) {
