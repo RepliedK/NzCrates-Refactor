@@ -1,8 +1,8 @@
 name: NzCrates
-version: 0.0.1
-author: Nozell
+version: 1.1.0
+author: Zuricall
 api: [5.0.0]
-main: Nozell\Main
+main: Nozell\Crates\Main
 permissions:
   box.give.all:
    default: op
