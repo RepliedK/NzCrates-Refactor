@@ -1,0 +1,15 @@
+# Floating Texts for Crates
+
+magefloatingtext: "§l§bMageCrate\n§e¡Aventúrate en la magia!"
+
+icefloatingtext: "§l§bIceCrate\n§e¡Explora la fría tundra!"
+
+enderfloatingtext: "§l§bEnderCrate\n§e¡Desata el poder del End!"
+
+magmafloatingtext: "§l§bMagmaCrate\n§e¡Siente el calor del magma!"
+
+pegasusfloatingtext: "§l§bPegasusCrate\n§e¡Vuela alto con Pegasus!"
+
+# Won Item Messages
+won_item: "&e{userName} &a¡Felicidades! Has ganado&e {itemName}"
+won_alert: "&6{userName} &aha ganado un ítem&7:&e {itemName} &aen la crate&7:&e {crateName}."
