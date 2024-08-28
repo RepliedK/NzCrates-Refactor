@@ -18,23 +18,15 @@ class CooldownTask extends Task {
     }
 
     public function onRun(): void {
-        if (!$this->player->isOnline()) {
+        if (!$this->player->isOnline() || $this->currentIndex < 0) {
             $this->getHandler()->cancel();
             return;
         }
 
-        if ($this->currentIndex >= 0) {
-            $step = $this->steps[$this->currentIndex];
+        $step = $this->steps[$this->currentIndex--];
 
-            if (isset($step['actions']) && is_array($step['actions'])) {
-                foreach ($step['actions'] as $action) {
-                    $action($this->player);
-                }
-            }
+        if (empty($step['actions']) || !is_array($step['actions'])) return;
 
-            $this->currentIndex--;
-        } else {
-            $this->getHandler()->cancel();
-        }
+        array_walk($step['actions'], fn($action) => $action($this->player));
     }
 }
