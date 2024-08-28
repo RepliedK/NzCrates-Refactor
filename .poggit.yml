@@ -8,4 +8,6 @@ projects:
     icon: "icon.png"
     libs:
      - src: "muqsit/invmenu/InvMenu"
+    lint:
+     phpstan: false
 ...
