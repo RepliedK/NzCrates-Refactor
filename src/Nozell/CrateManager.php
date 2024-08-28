@@ -50,7 +50,7 @@ class CrateManager {
         return $itemsList;
     }
 
-    public function editCrate(string $crateLabel, array $crateItems): void {
+    public function addCrateItems(string $crateLabel, array $crateItems): void {
         $serializedItems = [];
 
         foreach ($crateItems as $crateItem) {
@@ -184,7 +184,7 @@ class CrateManager {
         return str_replace($bannedWords, '', $message);
     }
     
-    public function getAllItemsFromCrate(string $crateLabel): array {
+    public function getCrateItems(string $crateLabel): array {
         
         if (!$this->crateData->exists($crateLabel)) {
             var_dump("Crate not found");
