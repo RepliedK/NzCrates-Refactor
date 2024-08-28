@@ -40,3 +40,46 @@ La configuración del plugin se puede realizar directamente desde el juego utili
 ## Requisitos
 
 - PocketMine-MP API 5.0.0 o superior.
+
+# NzCrates Plugin
+
+NzCrates is a PocketMine-MP plugin that allows you to create and manage crates (reward boxes) with support for entities, animations, and particles. Everything is editable from within the game using in-game items.
+
+## Features
+
+- **Entity Support**: Use customizable entities to represent crates.
+- **Animations**: Add attractive animations to your crates.
+- **Particles**: Enhance your crates with particle effects.
+- **In-game Editability**: Configure and edit crates directly from the game using in-game items.
+
+## Installation
+
+1. Download the `NzCrates` file and extract it into your server's `plugins` directory.
+2. Restart your server to load the plugin correctly.
+
+## Commands
+
+### /crates
+
+- **Description**: Opens a menu where you can configure and manage all crates.
+- **Usage**: `/crates`
+
+## Permissions
+
+- `crates.menu`: Allows the use of the `/crates` command. This permission is enabled by default for all players.
+
+## Configuration
+
+The plugin configuration can be done directly in-game using the `/crates` command to open the configuration menu. There is no need to manually edit configuration files.
+
+## Author
+
+- Nozell
+
+## Version
+
+- 1.0.0
+
+## Requirements
+
+- PocketMine-MP API 5.0.0 or higher.
