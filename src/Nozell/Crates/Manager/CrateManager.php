@@ -12,40 +12,17 @@ use Nozell\Crates\Utils\ItemSerializer;
 use Nozell\Crates\Utils\LavaParticleEffect;
 use Nozell\Crates\Utils\SoundEffect;
 use pocketmine\scheduler\TaskScheduler;
+use pocketmine\Server;
 
 class CrateManager {
     use LavaParticleEffect;
     use SoundEffect;
 
     public Config $crateData;
-
-    public function __construct() {
-        $this->loadCrates();
-    }
-
-    private function loadCrates(): void {
-        $this->crateData = new Config(Main::getInstance()->getDataFolder() . "crates.yml", Config::YAML);
-    }
+    
 
     public function saveCrates(): void {
-        $this->crateData->save();
-    }
-
-    public function getCrate(string $crateLabel): array {
-        if (!$this->crateData->exists($crateLabel)) {
-            var_dump("Crate not found.");
-            return [];
-        }
-
-        $deserializedData = unserialize($this->crateData->get($crateLabel));
-        $itemsList = [];
-
-        foreach ($deserializedData as $itemData) {
-            $item = ItemSerializer::deserialize($itemData);
-            $itemsList[] = $item;
-        }
-
-        return $itemsList;
+        Main::getInstance()->getConfig()->save();
     }
 
     public function addCrateItems(string $crateLabel, array $crateItems): void {
@@ -55,28 +32,29 @@ class CrateManager {
             $serializedItems[] = ItemSerializer::serialize($crateItem);
         }
 
-        $this->crateData->set($crateLabel, serialize($serializedItems));
+        Main::getInstance()->getConfig()->set($crateLabel, serialize($serializedItems));
         $this->saveCrates();
     }
 
     public function crateExists(string $crateLabel): bool {
-        return $this->crateData->exists($crateLabel);
+        return Main::getInstance()->getConfig()->exists($crateLabel);
     }
 
     public function getRandomItemFromCrate(string $crateLabel, string $name, Entity $entity): void {
-        $targetPlayer = Main::getInstance()->getServer()->getPlayerExact($name);
+        $targetPlayer = Server::getInstance()->getPlayerExact($name);
 
         if (!$targetPlayer instanceof Player) {
             var_dump("Player Not Found");
             return;
+            
         }
 
-        if (!$this->crateData->exists($crateLabel)) {
+        if (!Main::getInstance()->getConfig()->exists($crateLabel)) {
             var_dump("Crate not found");
             return;
         }
 
-        $deserializedData = unserialize($this->crateData->get($crateLabel));
+        $deserializedData = unserialize(Main::getInstance()->getConfig()->get($crateLabel));
         $randomIndex = array_rand($deserializedData);
         $randomItem = ItemSerializer::deserialize($deserializedData[$randomIndex]);
         $playerInventory = $targetPlayer->getInventory();
@@ -94,7 +72,7 @@ class CrateManager {
 
                         self::addLavaParticles($entity->getWorld(), $entity->getPosition());
 
-                        $onlinePlayers = Main::getInstance()->getServer()->getOnlinePlayers();
+                        $onlinePlayers = Server::getInstance()->getOnlinePlayers();
                         foreach ($onlinePlayers as $onlinePlayer) {
                             $onlinePlayer->sendTip(TextFormat::colorize(str_replace(["{userName}", "{itemName}", "{crateName}"], [$targetPlayer->getName(), $itemLabel, $crateLabel], Main::getInstance()->config->get("won_alert"))));
                         }
@@ -132,12 +110,12 @@ class CrateManager {
     }
 
     public function getCrateItems(string $crateLabel): array {
-        if (!$this->crateData->exists($crateLabel)) {
+        if (!Main::getInstance()->getConfig()->exists($crateLabel)) {
             var_dump("Crate not found");
             return [];
         }
 
-        $deserializedData = unserialize($this->crateData->get($crateLabel));
+        $deserializedData = unserialize(Main::getInstance()->getConfig()->get($crateLabel));
         $itemsList = [];
 
         foreach ($deserializedData as $itemData) {
