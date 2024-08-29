@@ -6,6 +6,6 @@ namespace Nozell\Crates\libs\FormAPI;
 
 use pocketmine\plugin\PluginBase;
 
-class Nozell\Crates\libs\FormAPI extends PluginBase{
+class FormAPI extends PluginBase{
 
 }
