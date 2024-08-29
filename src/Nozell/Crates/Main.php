@@ -13,7 +13,7 @@ use Nozell\Crates\Entity\EnderBoxEntity;
 use Nozell\Crates\Entity\IceBoxEntity;
 use Nozell\Crates\Entity\MagmaBoxEntity;
 use Nozell\Crates\Manager\CrateManager;
-use Nozell\Crates\Listeners\MeetingEventListener; 
+use Nozell\Crates\Listeners\EventListener; 
 use customiesdevs\customies\entity\CustomiesEntityFactory;
 use Nozell\Crates\Utils\CratesUtils;
 use pocketmine\player\Player;
@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener {
         CustomiesEntityFactory::getInstance()->registerEntity(MagmaBoxEntity::class, "crates:dark_magma", null, "minecraft:humanoid");
         CustomiesEntityFactory::getInstance()->registerEntity(PegasusBoxEntity::class, "crates:golden_pegasus", null, "minecraft:humanoid");
 
-        $this->getServer()->getPluginManager()->registerEvents(new MeetingEventListener(), $this); 
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this); 
     }
 
     public static function getInstance(): self {
