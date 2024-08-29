@@ -13,6 +13,7 @@ use Nozell\Crates\Utils\LavaParticleEffect;
 use Nozell\Crates\Utils\SoundEffect;
 use pocketmine\scheduler\TaskScheduler;
 use pocketmine\Server;
+use Nozell\Crates\Main;
 
 class CrateManager {
     use LavaParticleEffect;
