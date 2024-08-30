@@ -5,7 +5,6 @@ namespace Nozell\translate;
 use pocketmine\utils\Config;
 use pocketmine\utils\SingletonTrait;
 use pocketmine\utils\TextFormat;
-use rxduz\core\Main;
 
 final class Translator {
     use SingletonTrait;
