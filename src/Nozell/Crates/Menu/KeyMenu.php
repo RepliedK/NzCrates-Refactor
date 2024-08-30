@@ -23,7 +23,6 @@ final class KeyMenu extends SimpleForm {
         $this->setContent($content);
         $this->addButton("Cerrar");
 $player->sendForm($this);
-        ;
     }
 
     public function handleResponse(Player $player, $data): void {
