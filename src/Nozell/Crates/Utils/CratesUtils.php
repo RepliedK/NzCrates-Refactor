@@ -5,8 +5,6 @@ namespace Nozell\Crates\Utils;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use Nozell\Crates\Main;
-use JsonException;
-use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
 final class CratesUtils {
 

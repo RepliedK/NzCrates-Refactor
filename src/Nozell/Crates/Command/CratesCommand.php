@@ -16,10 +16,11 @@ class CratesCommand extends Command {
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args){
-        if($sender instanceof Player){
-      new MainMenu($sender);
-        } else {
-            $sender->sendMessage("Este comando solo puede ser usado en el juego.");
+        if (!$sender instanceof Player){
+            $sender->sendMessage("Este comando solo puede ser usado por jugadores");
+            return;
         }
+        new MainMenu($sender);
     }
+    
 }

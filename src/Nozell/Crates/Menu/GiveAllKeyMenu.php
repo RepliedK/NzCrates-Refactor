@@ -35,26 +35,14 @@ final class GiveAllKeyMenu extends CustomForm {
         foreach (Server::getInstance()->getOnlinePlayers() as $onlinePlayer) {
             $meeting = MeetingManager::getInstance()->getMeeting($onlinePlayer)->getCratesData();
 
-            switch ($keyType) {
-                case "mage":
-                    $meeting->addKeyMage($amount);
-                    break;
-                case "ice":
-                    $meeting->addKeyIce($amount);
-                    break;
-                case "ender":
-                    $meeting->addKeyEnder($amount);
-                    break;
-                case "magma":
-                    $meeting->addKeyMagma($amount);
-                    break;
-                case "pegasus":
-                    $meeting->addKeyPegasus($amount);
-                    break;
-                default:
-                    $player->sendMessage("§cTipo de key desconocido.");
-                    return;
-            }
+            match($keyType) {
+                "mage" => $meeting->addKeyMage($amount),
+                "ice" => $meeting->addKeyIce($amount),
+                "ender" => $meeting->addKeyEnder($amount),
+                "magma" => $meeting->addKeyMagma($amount),
+                "pegasus" => $meeting->addKeyPegasus($amount),
+                default => $player->sendMessage("§cTipo de key desconocido.")
+            };
 
             $onlinePlayer->sendMessage("§bHas recibido §e{$amount} keys de tipo {$keyType}");
         }
