@@ -35,11 +35,11 @@ final class Meeting {
         
         $player = $this->player;
         $player->sendMessage(TextFormat::colorize('&aCargando Tus Datos ...'));
-        $this->CratesData->setKeyMage(CratesUtils:: getKeyBox($player, "mage"));
-        $this->CratesData->setKeyIce(CratesUtils:: getKeyBox($player, "ice"));
-        $this->CratesData->setKeyEnder(CratesUtils:: getKeyBox($player, "ender"));
-        $this->CratesData->setKeyMagma(CratesUtils:: getKeyBox($player, "magma"));
-        $this->CratesData->setKeyPegasus(CratesUtils:: getKeyBox($player, "pegasus"));
+        $this->CratesData->setKeyMage(CratesUtils::getKeyBox($player, "mage"));
+        $this->CratesData->setKeyIce(CratesUtils::getKeyBox($player, "ice"));
+        $this->CratesData->setKeyEnder(CratesUtils::getKeyBox($player, "ender"));
+        $this->CratesData->setKeyMagma(CratesUtils::getKeyBox($player, "magma"));
+        $this->CratesData->setKeyPegasus(CratesUtils::getKeyBox($player, "pegasus"));
         $player->sendMessage(TextFormat::colorize('&aDatos cargados correctamente'));
         
     }
